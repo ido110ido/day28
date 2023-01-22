@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="search_bar">
+        <input type="search" name="search" id="search" autocomplete="off">
+        <button id="search_button">Search</button>
+        <select name="region" id="region">
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+            <option value="americas">Americas</option>
+            <option value="africa">Africa</option>
+            <option value="oceania">Oceania</option>
+          </select>
+    </div>
+    <div>
+        <div class="cards" id="countrys_grid">
+    </div>
+    <!-- <button id="load_more">Load more...</button> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>
