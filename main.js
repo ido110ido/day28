@@ -21,6 +21,7 @@
 //     return rejected(Error("not a number :("));
 //   });
 //Ex2
+let timer;
 const search_button = document.getElementById("search_button");
 const search_field = document.getElementById("search");
 const region_select = document.getElementById("region");
@@ -52,8 +53,17 @@ const regionData = async (region) => {
     console.error(error);
   }
 };
+const debounce = function (fn, d = 300) {
+  if (timer) {
+    clearTimeout(timer);
+  }
+
+  timer = setTimeout(fn, d);
+};
 search_field.addEventListener("input", () => {
-  searchData(search_field.value);
+  search_field.value == 0
+    ? getData()
+    : debounce(() => searchData(search_field.value));
 });
 region_select.addEventListener("change", () => {
   regionData(region_select.value);
